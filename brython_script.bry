@@ -1,0 +1,42 @@
+#! Brython script (Python in Browser)
+
+# Importing the necessary modules
+from browser import document
+from browser.html import H2, HR
+import random
+
+# document <= "Hello WWW, from Python!"
+
+document["TopBox"] <= H2("Random Text Generator, with Python!", align="center")
+document["TopBox"] <= HR()
+
+space_character = ' '   # ord(32)
+letters_ordinals = list(range(ord('A'), ord('Z')+1)) + list(range(ord('a'), ord('z')+1))    # Ordinals of character lie in range(65-65+25, then 97-97+25 characters)
+
+Output_String = ""
+
+number_of_paragraphs = input("Enter the number of paragraphs: ")
+try:
+    number_of_paragraphs = int(number_of_paragraphs)
+    if number_of_paragraphs>100:number_of_paragraphs=100        # Setting an upper limit of 100 Paragraphs to avoid overload
+    if number_of_paragraphs<1:number_of_paragraphs=1            # Setting a  lower limit to 1 Paragraph(s) to ensure visible functioning
+except:
+    number_of_paragraphs = 10
+
+lengthRangeOfEachWord = [1, 15]         # Setting the length limits for each generated word
+
+# Writing paragraphs with every word, character-by-character
+for paragraph_iteration in range(number_of_paragraphs):
+    for words_count in range(random.randint(50, 100)):
+        for word_count in range(random.randint(*lengthRangeOfEachWord)):
+            Output_String += (chr(random.choice(letters_ordinals)))
+        Output_String += (space_character)
+    Output_String += ("\n\n")
+    # Output_String += ("<br><br>")
+
+# print(Output_String)                      # print() logs the data to console and does not write it on page.
+
+# document <= Output_String                 # This writes directly to the document
+document["RandomText"].clear()              # This clears any existing innerHTML in the element with ID "RandomText" in the <body>
+document["RandomText"] <= Output_String     # This writes the Output_String to the element with ID RandomText in the <body> tag
+

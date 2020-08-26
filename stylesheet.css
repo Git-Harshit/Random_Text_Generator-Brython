@@ -1,0 +1,10 @@
+body {
+    max-width: 100%;
+}
+
+.textBox {
+    overflow-wrap: break-word;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
