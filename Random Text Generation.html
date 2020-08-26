@@ -19,17 +19,17 @@
 
     <section id="TopBox"></section>
 
-    <!-- <div> -->
+    <!-- Division for Random Text -->
     <!-- <pre id="RandomText" class="textBox"></pre> -->
     <article id="RandomText" class="textBox"><center> [ Your Random Generated text will appear here ] </center></article>     <!-- [ Random Generated text will appear here ] -->
-    <!-- </div> -->
+    <!-- End of Division for Random Text -->
 
     <!-- Python program in Browser with Brython --> <!-- Note (for future reference): Use <script type="text/python" src="fileName.bry"></script> with .bry file extension if you'd like to use Brython script from new file -->
     <script type="text/python">
         
         # Importing the necessary modules
         from browser import document
-        from browser.html import H2, HR
+        from browser.html import H2, HR     # browser.html contains all the tags
         import random
 
         # document <= "Hello WWW, from Python!"
@@ -44,9 +44,9 @@
         
         number_of_paragraphs = input("Enter the number of paragraphs: ")
         try:
-            number_of_paragraphs = int(number_of_paragraphs)
+            number_of_paragraphs = int(number_of_paragraphs)            # Taking input for number_of_paragraphs as browser prompt
             if number_of_paragraphs>100:number_of_paragraphs=100        # Setting an upper limit of 100 Paragraphs to avoid overload
-            if number_of_paragraphs<1:number_of_paragraphs=1        # Setting a  lower limit to 1 Paragraph(s) to ensure visible functioning
+            if number_of_paragraphs<1:number_of_paragraphs=1            # Setting a  lower limit to 1 Paragraph(s) to ensure visible functioning
         except:
             number_of_paragraphs = 10
         
@@ -63,7 +63,7 @@
 
         # print(Output_String)          # print() logs the data to console and does not write it on page.
         
-        # document <= Output_String     # This writes directly to the document
+        # document <= Output_String     # This writes directly to the document (appends Output_String in <body> tag )
         document["RandomText"].clear()              # This clears any existing innerHTML in the element with ID "RandomText" in the <body>
         document["RandomText"] <= Output_String     # This writes the Output_String to the element with ID RandomText in the <body> tag
 
