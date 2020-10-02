@@ -6,19 +6,19 @@ This program generates a random (usually non-readable, meaningless) text for ***
 
 ## Table of Contents
 
-- [About](#about)
-- [Installation](#using-the-code)
-- [Technology Stack](#technology-stack)
-- [Contributing Here](#contributing-here)
+* [About](#about)
+* [Usage](#usage)
+* [Technology Stack](#technology-stack)
+* [Contributing](#contributing)
 
 ## 📌 About
 
 This program executes Browser Python [(Brython)](https://brython.info/). Wait, what? What do you mean by “Browser Python”? <br />
 It means that the Random Text is generated with a simple Python script (also using random module to ensure fresh, distinguished and unidentical result on every load), and the generated content is loaded on webpage using Brython.
 
-## 🔧 Installation
+## 🔧 Usage
 
-### Prerequisite - Python 3.X is installed
+### Requirements - Python 3.X is installed
 
 Open the Command Line/Command Prompt and enter
 
@@ -29,8 +29,9 @@ where using a custom port number is optional, as port number defaults to 8000 wi
 
 ▶ For Python 2, [SimpleHTTPServer](https://docs.python.org/2/library/simplehttpserver.html) can be used instead.
 
-### Technology Stack
+## 👨‍💻 Technology Stack
 
-### Contributing Here
+## 🤝 Contributing
 
-Contributions for this repository are welcome. If you can add anything for the betterment of this repository and any of its content(s), get started by reading the [contributing](./Contributing.md) file. Every change counts!
+Your contributions are always welcome! 😀 </br>
+Please take a look at our [contributing](./Contributing.md) guidelines if you're interested in helping!
