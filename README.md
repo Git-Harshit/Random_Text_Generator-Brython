@@ -16,7 +16,8 @@ This program generates a random (usually non-readable, meaningless) text for ***
 This program executes Browser Python [(Brython)](https://brython.info/). Wait, what? What do you mean by “Browser Python”? <br />
 It means that the Random Text is generated with a simple Python script (also using random module to ensure fresh, distinguished and unidentical result on every load), and the generated content is loaded on webpage using Brython.
 
-## 🔧 Usage
+🔧 Usage
+=========
 
 ### Requirements - Python 3.X is installed
 
