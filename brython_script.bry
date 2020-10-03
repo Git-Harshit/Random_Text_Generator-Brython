@@ -5,6 +5,23 @@ from browser import document
 from browser.html import H2, HR
 import random
 
+# importing stuff for speech
+import pyttsx3
+import speech_recognition as sr
+from difflib import SequenceMatcher
+
+# defining voice and engine
+
+engine = pyttsx3.init('sapi5')
+voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[1].id) # index 0 is for female voice and 1 is for male voice
+
+# defining module for speaking
+
+def speak(audio):
+    engine.say(audio)
+    break
+
 # document <= "Hello WWW, from Python!"
 
 document["TopBox"] <= H2("Random Text Generator, with Python!", align="center")
@@ -33,6 +50,9 @@ for paragraph_iteration in range(number_of_paragraphs):
         Output_String += (space_character)
     Output_String += ("\n\n")
     # Output_String += ("<br><br>")
+
+speak(Output_String) # the user can hear the text generated now
+
 
 # print(Output_String)                      # print() logs the data to console and does not write it on page.
 
