@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
+about: Suggest an idea or updation for this project
 title: ''
 labels: ''
 assignees: ''
@@ -18,3 +18,5 @@ A clear and concise description of any alternative solutions or features you've 
 
 **Additional context**
 Add any other context or screenshots about the feature request here.
+
+<!-- One Check: Please proofread the suggested content once, and delete any headings and options that are not relevant or applicable for your mentioned case -->
