@@ -16,5 +16,4 @@ engine.setProperty('voice', voices[1].id) # index 0 is for female voice and 1 is
 def speak(audio):
     engine.say(audio)
     break
-
-speak('it will speak the text generated')
+    
