@@ -2,7 +2,7 @@
 
 # importing stuff for speech
 import pyttsx3
-import mport speech_recognition as sr
+import speech_recognition as sr
 from difflib import SequenceMatcher
 
 # defining voice and engine
