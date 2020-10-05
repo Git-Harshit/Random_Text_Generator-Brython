@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Text Generator</title>
-</head>
-<body onload="brython()">
-
     <!-- External CSS -->
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
+<body onload="brython()">
     <section id="TopBox"></section>
-
+    <div id="temp"></div>
     <!-- Division for containing Random Text -->
-    <!-- <pre id="RandomText" class="textBox"></pre> -->
-    <article id="RandomText" class="textBox"><center> [ Your Random Generated text will appear here ] </center></article>     <!-- [ Random Generated text will appear here ] -->
+    <!-- <pre id="RandomText" class="textBox"></pre> -->\
+    <article id="RandomText" class="textBox">
+        <center> [ Your Random Generated text will appear here ] </center>
+    </article> <!-- [ Random Generated text will appear here ] -->
+
     <!-- End of Division containing Random Text -->
+
+    <!-- Buttons -->
+    <a href="./index.html"><button class="btn" id="btn1">Re-Generate Text</a></button>
+    <div class="tooltip">
+        <button class="btn" id="btn2" onclick="copy();" onmouseout="outFunc()"> <span class="tooltiptext"
+                id="myTooltip">Copy to
+                clipboard</span> Copy Text <i class="fa fa-copy"></i></button>
+    </div>
 
     <!-- Executing Python program in Browser with Brython -->
     <script type="text/python" src="brython_script.bry"></script> <!-- Linking Brython (*.bry) script -->
@@ -23,5 +35,24 @@
     <!-- Including Brython v3.8.9 using CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.9/brython.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.9/brython_stdlib.min.js"></script>
+    <script>
+        function copy() {
+            var copyText = document.getElementById("RandomText");
+            var copied = "<textarea id='textcopy'>" + copyText.innerHTML + "</textarea>";
+            document.getElementById("temp").innerHTML = copied;
+            var text = document.getElementById("textcopy");
+            text.select();
+            document.execCommand("copy");
+
+            var tooltip = document.getElementById("myTooltip");
+            tooltip.innerHTML = "Copied!";
+        }
+
+        function outFunc() {
+            var tooltip = document.getElementById("myTooltip");
+            tooltip.innerHTML = "Copy to clipboard";
+        }
+    </script>
 </body>
+
 </html>
