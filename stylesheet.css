@@ -1,5 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap"); 
+
 body {
     max-width: 100%;
+    background: linear-gradient(45deg, #d40c0c, #14bae4) no-repeat;
+    min-height: 100vh;
+}
+
+a{
+    text-decoration: none;
+}
+
+#TopBox{
+    color: white;
+    font-family: "Roboto",sans-serif;
+}
+
+#temp{
+    width: 0;
+    height: 0;
+    opacity: 0;
 }
 
 .textBox {
@@ -7,4 +27,83 @@ body {
     word-break: break-all;
     word-wrap: break-word;
     white-space: pre-wrap;
+    margin: 40px;
+    color: white;
+    font-family: "Montserrat",sans-serif;
+}
+
+.btn{
+    border: none;
+    border-radius: 49px;
+    background: #0b70e4;
+    padding: 8px 16px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    font-family: "Roboto",sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    bottom: 20px;
+}
+
+#btn1{
+    margin-left: 40%;
+    color: white;
+}
+
+#btn2{
+    width: 120px;
+    margin-left: 5%; 
+}
+
+.btn:hover{
+    background: white;
+    color: black;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px){
+    .btn{
+        margin-left: 10%;
+    }
+    #btn1{
+        margin-left: 10%;
+    }
 }
