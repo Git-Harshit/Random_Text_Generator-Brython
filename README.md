@@ -5,9 +5,9 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Git-Harshit/Random_Text_Generator-Brython?style=for-the-badge)
 [![GitHub license](https://img.shields.io/github/license/Git-Harshit/Random_Text_Generator-Brython?style=for-the-badge)](https://github.com/Git-Harshit/Random_Text_Generator-Brython/blob/master/LICENSE)
 [![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2Fgit-harshit.github.io%2FRandom_Text_Generator-Brython%2F)](https://git-harshit.github.io/Random_Text_Generator-Brython/)
-![GitHub Hacktoberfest combined status](https://img.shields.io/github/hacktoberfest/2020/Git-Harshit/Random_Text_Generator-Brython?style=for-the-badge)
+![GitHub Hacktoberfest combined status](https://img.shields.io/github/hacktoberfest/2021/Git-Harshit/Random_Text_Generator-Brython?style=for-the-badge)
 
-This program generates a random (usually non-readable, meaningless) text for ***n*** number of paragraphs where ***n*** is taken as the user's input. It is capped to generate 1-100 random paragraphs, so as to keep the performance significant. 
+This program generates a random (usually non-readable, meaningless) text for ***n*** number of paragraphs where ***n*** is taken as the user's input. It is capped to generate 1-100 random paragraphs, to keep the performance significant. 
 
 #### 🚀 Check out the live tool [here](https://git-harshit.github.io/Random_Text_Generator-Brython/).
 
@@ -20,7 +20,7 @@ This program generates a random (usually non-readable, meaningless) text for ***
 
 ## About 
 
-This program executes Browser Python [(Brython)](https://brython.info/). Wait, what? What do you mean by “Browser Python”? <br />
+This program executes Browser Python [(Brython)](https://brython.info/). Wait, what? What is meant by “Browser Python”? <br />
 It means that the Random Text is generated with a simple Python script (also using random module to ensure fresh, distinguished and unidentical result on every load), and the generated content is loaded on webpage using Brython.
 
 ## Usage 
@@ -52,5 +52,7 @@ The following tools and technology are currently in use here.
 
 Your contributions are always welcome! 😀 <br/>
 Please take a look at our [contributing](./Contributing.md) guidelines if you're interested in helping towards making the repository better!
+
+Thanks to GitHub CodeSpaces, you can start editing the source files here in Visual Studio Code in the browser under [github.dev](github.dev) domain, by simply pressing '.' (dot) key in your keyboard.
 
 Every change counts! 🔄
