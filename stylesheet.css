@@ -46,12 +46,12 @@ a{
     bottom: 20px;
 }
 
+.btn > a {
+    color: inherit;
+}
+
 #btn1{
     margin-left: 40%;
-    color: white;
-}
-.text{
-  color: white;
 }
 
 #btn2{
