@@ -3,7 +3,7 @@
 
 body {
     max-width: 100%;
-    background: linear-gradient(45deg, #d40c0c, #14bae4) no-repeat;
+    background: #03022D;
     min-height: 100vh;
 }
 
@@ -35,8 +35,8 @@ a{
 .btn{
     border: none;
     border-radius: 49px;
-    background: #0b70e4;
-    padding: 8px 16px;
+    background: linear-gradient(45deg, #6964DE, #FCA6E9) no-repeat;
+    padding: 1rem 2rem;
     color: white;
     cursor: pointer;
     position: relative;
@@ -44,6 +44,7 @@ a{
     font-weight: 600;
     letter-spacing: 1px;
     bottom: 20px;
+    transition: transform .2s ease-in ;
 }
 
 .btn > a {
@@ -55,18 +56,17 @@ a{
 }
 
 #btn2{
-    width: 120px;
+    width: 100%;
     margin-left: 5%; 
 }
 
 .btn:hover{
-    background: white;
-    color: black;
+    transform: scale(1.1);
 }
 
 .tooltip {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .tooltip .tooltiptext {
