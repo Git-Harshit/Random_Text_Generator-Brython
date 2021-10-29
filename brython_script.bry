@@ -5,6 +5,10 @@ from browser import document
 from browser.html import H2, HR
 import random
 
+
+# importing file for text to speech feature 
+import text_to_speech.py
+
 # document <= "Hello WWW, from Python!"
 
 document["TopBox"] <= H2("Random Text Generator, with Python!", align="center")
@@ -33,6 +37,9 @@ for paragraph_iteration in range(number_of_paragraphs):
         Output_String += (space_character)
     Output_String += ("\n\n")
     # Output_String += ("<br><br>")
+
+speak(Output_String) # the user can hear the text generated now
+
 
 # print(Output_String)                      # print() logs the data to console and does not write it on page.
 
