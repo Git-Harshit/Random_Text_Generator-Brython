@@ -29,6 +29,8 @@
             <button class="btn" id="copyBtn" onclick="copy();" onmouseout="outFunc()"><span class="tooltiptext"
                 id="myTooltip">Copy to clipboard</span> Copy Text <i class="fa fa-copy"></i></button>
         </div>
+
+        <button class="btn" id="saveAsTxt" onclick="saveAsTxt(event)">Save as txt file</button>
     </center>
 
     <!-- Executing Python program in Browser with Brython -->
@@ -51,6 +53,20 @@
 
         function outFunc() {
             document.getElementById("myTooltip").innerText = "Copy to clipboard";
+        }
+
+        function saveAsTxt(event) {
+
+            const TEXT = document.getElementById("RandomText").innerText
+            const URI = "data:application/octet-stream;charset=utf-8,"+encodeURIComponent(TEXT)
+
+            event.preventDefault();
+            let link = document.createElement('a');
+            link.setAttribute("href", URI);
+            link.setAttribute("download", "random-text.txt");
+            event.target.appendChild(link);
+            link.click();
+            event.target.removeChild(link);
         }
     </script>
 </body>
