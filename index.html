@@ -15,10 +15,9 @@
     <div id="temp"></div>
     <center>
         <!-- Division for containing Random Text -->
-        <article id="RandomText" class="textBox">
+        <article id="RandomText" class="textBox"> <!-- [ Random Generated text will appear here ] -->
             [ Your Random Generated text will appear here ] 
-            <!-- [ Random Generated text will appear here ] -->
-        </article> 
+        </article>
 
         <!-- End of Division containing Random Text -->
 
@@ -26,8 +25,9 @@
         <button class="btn" id="generateBtn">Re-Generate Text</button>
     
         <div class="tooltip">
-            <button class="btn" id="copyBtn" onclick="copy();" onmouseout="outFunc()"><span class="tooltiptext"
-                id="myTooltip">Copy to clipboard</span> Copy Text <i class="fa fa-copy"></i></button>
+            <button class="btn" id="copyBtn" onclick="copy();" onmouseout="outFunc()">
+                <span class="tooltiptext" id="myTooltip">Copy to clipboard</span> Copy Text <i class="fa fa-copy"></i>
+            </button>
         </div>
 
         <button class="btn" id="saveAsTxt" onclick="saveAsTxt(event)">Save as txt file</button>
@@ -39,6 +39,7 @@
     <!-- Including Brython v3.8.9 using CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.9/brython.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.9/brython_stdlib.min.js"></script>
+    <!-- Custom Script -->
     <script>
         function copy() {
             var copyText = document.getElementById("RandomText");
@@ -60,13 +61,15 @@
             const TEXT = document.getElementById("RandomText").innerText
             const URI = "data:application/octet-stream;charset=utf-8,"+encodeURIComponent(TEXT)
 
-            event.preventDefault();
             let link = document.createElement('a');
             link.setAttribute("href", URI);
             link.setAttribute("download", "random-text.txt");
-            event.target.appendChild(link);
+            document.getElementsByTagName('body')[0].appendChild(link);
             link.click();
-            event.target.removeChild(link);
+            document.getElementsByTagName('body')[0].removeChild(link);
+
+            // Alternative to temporarily attaching <a> link to <body>: directly opening it with window.open(URI); but setting filename needs to be looked into in this case!
+
         }
     </script>
 </body>
