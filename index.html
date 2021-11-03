@@ -13,21 +13,25 @@
 <body onload="brython()">
     <section id="TopBox"></section>
     <div id="temp"></div>
-    <!-- Division for containing Random Text -->
-    <!-- <pre id="RandomText" class="textBox"></pre> -->\
-    <article id="RandomText" class="textBox">
-        <center> [ Your Random Generated text will appear here ] </center>
-    </article> <!-- [ Random Generated text will appear here ] -->
+    <center>
+        <!-- Division for containing Random Text -->
+        <article id="RandomText" class="textBox"> <!-- [ Random Generated text will appear here ] -->
+            [ Your Random Generated text will appear here ] 
+        </article>
 
-    <!-- End of Division containing Random Text -->
+        <!-- End of Division containing Random Text -->
 
-    <!-- Buttons -->
-    <a href="./index.html"><button class="btn" id="btn1">Re-Generate Text</a></button>
-   
-    <div class="tooltip">
-        <button class="btn" id="btn2" onclick="copy();" onmouseout="outFunc()"><span class="tooltiptext"
-            id="myTooltip">Copy to clipboard</span> Copy Text <i class="fa fa-copy"></i></button>
-    </div>
+        <!-- Buttons -->
+        <button class="btn" id="generateBtn">Re-Generate Text</button>
+    
+        <div class="tooltip">
+            <button class="btn" id="copyBtn" onclick="copy();" onmouseout="outFunc()">
+                <span class="tooltiptext" id="myTooltip">Copy to clipboard</span> Copy Text <i class="fa fa-copy"></i>
+            </button>
+        </div>
+
+        <button class="btn" id="saveAsTxt" onclick="saveAsTxt(event)">Save as txt file</button>
+    </center>
 
     <!-- Executing Python program in Browser with Brython -->
     <script type="text/python" src="brython_script.bry"></script> <!-- Linking Brython (*.bry) script -->
@@ -35,22 +39,37 @@
     <!-- Including Brython v3.8.9 using CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.9/brython.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.9/brython_stdlib.min.js"></script>
+    <!-- Custom Script -->
     <script>
         function copy() {
             var copyText = document.getElementById("RandomText");
-            var copied = "<textarea id='textcopy'>" + copyText.innerHTML + "</textarea>";
+            var copied = "<textarea id='textcopy'>" + copyText.innerText + "</textarea>";
             document.getElementById("temp").innerHTML = copied;
             var text = document.getElementById("textcopy");
             text.select();
             document.execCommand("copy");
 
-            var tooltip = document.getElementById("myTooltip");
-            tooltip.innerHTML = "Copied!";
+            document.getElementById("myTooltip").innerText = "Copied!";
         }
 
         function outFunc() {
-            var tooltip = document.getElementById("myTooltip");
-            tooltip.innerHTML = "Copy to clipboard";
+            document.getElementById("myTooltip").innerText = "Copy to clipboard";
+        }
+
+        function saveAsTxt(event) {
+
+            const TEXT = document.getElementById("RandomText").innerText
+            const URI = "data:application/octet-stream;charset=utf-8,"+encodeURIComponent(TEXT)
+
+            let link = document.createElement('a');
+            link.setAttribute("href", URI);
+            link.setAttribute("download", "random-text.txt");
+            document.getElementsByTagName('body')[0].appendChild(link);
+            link.click();
+            document.getElementsByTagName('body')[0].removeChild(link);
+
+            // Alternative to temporarily attaching <a> link to <body>: directly opening it with window.open(URI); but setting filename needs to be looked into in this case!
+
         }
     </script>
 </body>
