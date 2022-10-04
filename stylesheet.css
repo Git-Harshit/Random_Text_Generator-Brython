@@ -1,6 +1,28 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap");
 
+/* width */
+::-webkit-scrollbar {
+    width: 25px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    /* background: #8D74E1; */
+    background: linear-gradient(15deg,#5a3fb2 0%,#8D74E1 100%);
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6852b3;
+  }
+
 body {
     max-width: 100%;
     background: #03022D;
