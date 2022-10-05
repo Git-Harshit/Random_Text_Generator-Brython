@@ -1,44 +1,43 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap");
 
-/* width */
+/* Setting scrollbar width */
 ::-webkit-scrollbar {
     width: 25px;
 }
 
-/* Track */
+/* Scrollbar Track */
 ::-webkit-scrollbar-track {
     background: transparent;
 }
 
-/* Handle */
+/* Scrollbar Handle */
 ::-webkit-scrollbar-thumb {
     /* background: #8D74E1; */
     background: linear-gradient(15deg,#5a3fb2 0%,#8D74E1 100%);
     border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+/* Scrollbar handle on hover */
+::-webkit-scrollbar-thumb:hover {
     background: #6852b3;
-  }
+}
 
 body {
     max-width: 100%;
     background: #03022D;
-    min-height: 100vh;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-#TopBox{
+#TopBox {
     color: white;
     font-family: "Roboto",sans-serif;
 }
 
-#temp{
+#temp {
     width: 0;
     height: 0;
     opacity: 0;
@@ -54,7 +53,7 @@ a{
     font-family: "Montserrat",sans-serif;
 }
 
-.btn{
+.btn {
     border: none;
     border-radius: 49px;
     background: linear-gradient(45deg, #6964DE, #FCA6E9) no-repeat;
@@ -74,7 +73,7 @@ a{
     color: inherit;
 }
 
-.btn:hover{
+.btn:hover {
     transform: scale(1.1);
 }
 
